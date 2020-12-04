@@ -13,14 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 /*Route::get('/', function () {
-    echo "Brouettes";
+    return view('welcome');
+});*/
+Route::get('/','MainController@home'); /* Ici dans MainController va chercher Home*/
+
+
+Route::get('/bonjour/{prenom}','MainController@bonjour');
+Route::post('/formulaire',function(){
+    echo "Formulaire";
 });
 
-
-Route::get('/bonjour',function(){
+/*Route::get('/bonjour',function(){
     echo 'Bonjour';
 // });*/ /* voici comment on pourrait recréer un e autre façon d'afficher notre page laravel. les routes vers lesquelles notre site va apparaître */
