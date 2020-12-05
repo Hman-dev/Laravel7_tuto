@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/','MainController@home'); /* Ici dans MainController va chercher Home*/
+// Route::get('/','MainController@home'); /* Ici dans MainController va chercher Home*/
 
 
 Route::get('/bonjour/{prenom}','MainController@bonjour');
@@ -27,3 +27,6 @@ Route::post('/formulaire',function(){
 /*Route::get('/bonjour',function(){
     echo 'Bonjour';
 // });*/ /* voici comment on pourrait recréer un e autre façon d'afficher notre page laravel. les routes vers lesquelles notre site va apparaître */
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home'); 
