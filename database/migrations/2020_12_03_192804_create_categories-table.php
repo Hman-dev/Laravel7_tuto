@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->bigInteger('parent_id')->unsigned();
+            $table->bigInteger('parent_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('parent_id')->references('id')->on('categories'); /* sur $table je souhaite mettre une clétrangère sur parent_id
              qui référence l'Id sur la table catégories*/ 
